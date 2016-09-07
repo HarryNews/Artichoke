@@ -1,0 +1,1 @@
+browserify client/main.js > public/scripts/artichoke.js
