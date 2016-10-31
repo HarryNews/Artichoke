@@ -32,6 +32,12 @@ Editor.addNode = function() {
 	document.addEventListener("mousedown", place);
 }
 
+Editor.deleteNode = function() {
+	if(Editor.selected) {
+		Editor.selected.detach();
+	}
+}
+
 Editor.select = function(node) {
 	Editor.deselect();
 
@@ -50,6 +56,7 @@ Editor.deselect = function() {
 
 Editor.init = function() {
 	document.getElementById("add-node").addEventListener("click", Editor.addNode);
+	document.getElementById("delete-node").addEventListener("click", Editor.deleteNode);
 
 	Editor.canvas.addEventListener("mousedown", Editor.deselect);
 

@@ -3,13 +3,25 @@
 	<head>
 		<title>Artichoke</title>
 		<script type="text/javascript" src="scripts/jquery-3.1.0.min.js"></script>
-		<script type="text/javascript" src="scripts/svg.js"></script>
+		<!--<script type="text/javascript" src="scripts/svg.js"></script>-->
 		<script type="text/javascript" src="scripts/artichoke.js"></script>
 		<link rel="stylesheet" type="text/css" href="styles/style.css"/>
 	</head>
-	<body onload="init()">
-		<h1 id="title-header">Artichoke</h1>
-		<button class="title-button">New</button>
-		<button class="disabled title-button">Load</button>
+	<body>
+		<div id="sidebar">
+			<button type="button" id="add-node">Add</button>
+			<button type="button" id="delete-node">Delete</button>
+		</div>
+		<svg id="canvas" width="854" height="480" xmlns="http://www.w3.org/2000/svg" version="1.1">
+			<text id="debug-mLoc" x="10" y="20" />
+			<text id="debug-svg" x="10" y="60" />
+			<!--<text id="debug-mTrans" x="10" y="40" />-->
+			<!--<text id="debug-mLoc" font-family="verdana" font-size="12px" x="10" y="20" />-->
+
+			<svg id="res-canvas" width="854" height="480" xmlns="http://www.w3.org/2000/svg" version="1.1">
+			</svg>
+			<svg id="edit-canvas" xmlns="http://www.w3.org/2000/svg" version="1.1">
+			</svg>
+		</svg>
 	</body>
 </html>

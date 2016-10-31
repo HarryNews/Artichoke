@@ -1,170 +1,63 @@
-html, body {
-	overflow: hidden;
-	width: 100%;
-	height: 100%;
-	padding: 0;
-	margin: 0;
-	background-color: black;
-}
 * {
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
-#title-header {
-	color: white;
-	margin: 50px 0 75px 30px;
-}
-.title-button {
-	display: block;
-	box-sizing: content-box;
-	text-align: center;
-	width: 130px;
-	padding: 30px 40px;
-	border: 2px solid;
-	border-radius: 15px;
-	outline: none;
-	margin: 10px 30px;
-	background-color: transparent;
-}
-.title-button:not(.disabled) {
-	border-color: white;
-	color: white;
-}
-.title-button:not(.disabled):hover {
-	border-color: rgb(17, 166, 0);
-	color: rgb(17, 166, 0);
-}
-.title-button.disabled {
-	border-color: rgb(75, 75, 75);
-	color: rgb(75, 75, 75);
-}
-#form-wrapper {
+#sidebar {
 	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background-color: rgba(127, 127, 127, 0.5);
-}
-#form-wrapper:empty {
-	pointer-events: none;
-	display: none;
-}
-#form-wrapper > form {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	padding: 0.5em 1ch;
-	border: 2px solid white;
-	border-radius: 10px;
-	background-color: black;
-	color: white;
-}
-#form-wrapper > form h2 {
-	margin: 0;
-	color: white;
-}
-#form-wrapper > form label {
-	display: inline;
-	min-width: 7ch;
-	margin: 0;
-}
-#form-wrapper > form input {
-	box-sizing: content-box;
-	display: block;
-	padding: 0 1ch;
-	border: 1px solid white;
-	transition: border-color 0.5s;
-	border-radius: 15px;
-	outline: none;
-	margin: 0;
-	background-color: transparent;
-	color: inherit;
-}
-#form-wrapper > form input:not(.invalid):focus {
-	border-color: rgb(17, 166, 0);
-}
-#form-wrapper > form .submit-button {
-	border: none;
-	outline: none;
-	border-radius: 15px;
-	background-color: white;
-	color: black;
-}
-#form-wrapper > form .submit-button:hover {
-	background-color: rgb(17, 166, 0);
-}
-#toolbar {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 50px;
-	max-height: calc(100% - 30px);
-	padding: 0 2px 2px 2px;
-	overflow: auto;
-	background-color: white;
-}
-#toolbar button {
-	box-sizing: border-box;
-	width: 50px;
-	height: 50px;
-	padding: 10px;
-	border: none;
-	outline: none;
-	margin-top: 2px;
-	overflow: hidden;
-	background-color: black;
-}
-#toolbar button > svg {
-	width: 30px;
-	height: 30px;
-}
-#toolbar button > svg .primary-color {
-	fill: white;
-}
-#toolbar button:hover > svg .primary-color {
-	fill: red;
-}
-#bottombar {
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	height: 30px;
-}
-#zoom {
-	display: -webkit-flex;
-	display: flex;
+	display: inline-flex;
 	flex-direction: column;
-	position: absolute;
-	bottom: 0;
-	width: 11ch;
-	min-height: 26px;
-	border: 2px solid white;
-	border-radius: 15px;
-	outline: none;
-	background-color: black;
-	color: white;
-	overflow: hidden;
+	flex-wrap: wrap;
+	border: 1px solid black;
 }
-#zoom button {
-	width: 100%;
-	height: 26px;
-	padding: 0 1ch;
+#sidebar * {
+	display: inline;
+	width: 64px;
+	height: 64px;
+	padding: 4px;
 	border: none;
 	outline: none;
 	margin: 0;
-	background-color: black;
-	font: inherit;
-	vertical-align: middle;
-	color: white;
+	background-clip: content-box;
 }
-#zoom:not(.open) button {
+#sidebar button {
+	/* this is chrome's default button color. */
+	background-color: rgb(221, 221, 221);
+}
+#sidebar button:hover {
+	background-color: rgb(200, 200, 200);
+}
+svg {
+	shape-rendering: auto;
+}
+#canvas {
+	margin-left: 72px;
+	outline: 2px solid black;
+}
+svg text {
+	font-family: verdana;
+	font-size: 12px;
+	-webkit-user-select: none;
+}
+svg .node {
+	r: 8;
+	stroke-width: 2px;
+}
+svg > g > .node {
+	fill: orange;
+	stroke: darkorange;
+}
+svg > g g .node {
+	fill: blue;
+	stroke: darkblue;
+}
+svg line {
+	stroke-width: 4px;
+	stroke: black;
 	pointer-events: none;
 }
-#zoom:not(.open) button:not(.active-zoom) {
-	display: none;
+svg .no-event, svg .no-event * {
+	opacity: 0.5;
+	pointer-events: none;
 }
-#zoom.open button:hover {
-	background-color: rgb(127, 127, 127);
+svg .selected {
+	fill: yellow !important;
 }

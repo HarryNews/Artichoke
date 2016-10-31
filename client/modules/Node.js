@@ -58,9 +58,15 @@ Node.prototype.setParent = function(parent, angle = 0, distance = 50) {
 }
 
 Node.prototype.detach = function() {
-	if(this.parent) {
-		this.parent.group.removeChild(this.group);
+	if(this.group.parentNode) {
+		this.group.parentNode.removeChild(this.group);
 	}
+
+	if(Editor.selected === this) {
+		Editor.selected = null;
+	}
+
+	return this;
 }
 
 Node.prototype.move = function(x, y) {

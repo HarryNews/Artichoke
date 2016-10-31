@@ -1,28 +1,26 @@
 $(document).ready(function()
 {
-	var DataBind = require("./modules/DataBind.js");
-	$(".title-button:not(.disabled)").click(function()
-	{
-		// var toTest = [["+12.34", 0], ["-12.34", 0], ["-.1234", 0], [".1234", 0], ["1234.", 0], ["abc 1234", 0], ["abc 1234", 4], 
-		// 	["1234abc", 0], [".", 0], ["", 0], ["+", 0], ["abcd", 0], ["1234", 2]];
+	var Node = require('./modules/Node.js');
+	var Editor = require('./modules/Editor.js');
 
-		// for(var i in toTest)
-		// {
-		// 	console.log("('" + toTest[i][0] + "', " + toTest[i][1] + ") -> " + 
-		// 		DataBind.getNumber(toTest[i][0], toTest[i][1]));
-		// }
-		// console.log(DataBind.getNumber("+12.34", 0));
-		// console.log(DataBind.getNumber("-12.34", 0));
-		// console.log(DataBind.getNumber("+.1234", 0));
-		// console.log(DataBind.getNumber(".1234", 0));
-		// console.log(DataBind.getNumber("1234.", 0));
-		// console.log(DataBind.getNumber("abc 1234", 0));
-		// console.log(DataBind.getNumber("abc 1234", 4));
-		// console.log(DataBind.getNumber("1234 abc", 0));
-		var p;
-		if(p = true)
-		{
-			console.log(p);
-		}
-	});
-});
+	Editor.init();
+
+	//var a = Node.create();
+
+	//Node.baseNode(a, 100, 100);
+	//Node.testBaseNode(1, 2);
+	// var a = new Node();
+	// a.toBase();
+	// var aa = new Node();
+	// aa.setParent(a);
+	// var ab = new Node();
+	// ab.setParent(a);
+	// var aaa = new Node();
+	// aaa.setParent(aa);
+	// var aab = new Node();
+	// aab.setParent(aa);
+	// var aba = new Node();
+	// aba.setParent(ab);
+	// var abb = new Node();
+	// abb.setParent(ab);
+}); 
